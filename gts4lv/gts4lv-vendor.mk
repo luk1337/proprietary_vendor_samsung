@@ -18,8 +18,21 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/samsung/gts4lv
 
 PRODUCT_COPY_FILES += \
+    vendor/samsung/gts4lv/proprietary/product/bin/dpmd:$(TARGET_COPY_OUT_PRODUCT)/bin/dpmd \
+    vendor/samsung/gts4lv/proprietary/product/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/dpm/dpm.conf \
+    vendor/samsung/gts4lv/proprietary/product/etc/init/dpmd.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/dpmd.rc \
+    vendor/samsung/gts4lv/proprietary/product/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.qti.dpmframework.xml \
+    vendor/samsung/gts4lv/proprietary/product/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/dpmapi.xml \
+    vendor/samsung/gts4lv/proprietary/product/framework/com.qti.dpmframework.jar:$(TARGET_COPY_OUT_PRODUCT)/framework/com.qti.dpmframework.jar \
+    vendor/samsung/gts4lv/proprietary/product/framework/dpmapi.jar:$(TARGET_COPY_OUT_PRODUCT)/framework/dpmapi.jar \
+    vendor/samsung/gts4lv/proprietary/product/lib64/com.qualcomm.qti.dpm.api@1.0.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/com.qualcomm.qti.dpm.api@1.0.so \
+    vendor/samsung/gts4lv/proprietary/product/lib64/libdpmctmgr.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdpmctmgr.so \
+    vendor/samsung/gts4lv/proprietary/product/lib64/libdpmfdmgr.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdpmfdmgr.so \
+    vendor/samsung/gts4lv/proprietary/product/lib64/libdpmframework.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdpmframework.so \
+    vendor/samsung/gts4lv/proprietary/product/lib64/libdpmtcm.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdpmtcm.so \
     vendor/samsung/gts4lv/proprietary/vendor/bin/ATFWD-daemon:$(TARGET_COPY_OUT_VENDOR)/bin/ATFWD-daemon \
     vendor/samsung/gts4lv/proprietary/vendor/bin/adpl:$(TARGET_COPY_OUT_VENDOR)/bin/adpl \
+    vendor/samsung/gts4lv/proprietary/vendor/bin/dpmQmiMgr:$(TARGET_COPY_OUT_VENDOR)/bin/dpmQmiMgr \
     vendor/samsung/gts4lv/proprietary/vendor/bin/hw/rild:$(TARGET_COPY_OUT_VENDOR)/bin/hw/rild \
     vendor/samsung/gts4lv/proprietary/vendor/bin/netmgrd:$(TARGET_COPY_OUT_VENDOR)/bin/netmgrd \
     vendor/samsung/gts4lv/proprietary/vendor/bin/secril_config_svc:$(TARGET_COPY_OUT_VENDOR)/bin/secril_config_svc \
@@ -49,6 +62,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/gts4lv/proprietary/vendor/etc/audconf/OPEN/workspaceFile.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/audconf/OPEN/workspaceFile.qwsp \
     vendor/samsung/gts4lv/proprietary/vendor/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml \
     vendor/samsung/gts4lv/proprietary/vendor/etc/init/dataadpl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataadpl.rc \
+    vendor/samsung/gts4lv/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
     vendor/samsung/gts4lv/proprietary/vendor/etc/init/init-qcril-data.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init-qcril-data.rc \
     vendor/samsung/gts4lv/proprietary/vendor/etc/init/netmgrd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/netmgrd.rc \
     vendor/samsung/gts4lv/proprietary/vendor/etc/locale/plmn_delta_eng.bin:$(TARGET_COPY_OUT_VENDOR)/etc/locale/plmn_delta_eng.bin \
@@ -67,7 +81,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/gts4lv/proprietary/vendor/firmware/wlan/qca_cld/grippower.info:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/grippower.info \
     vendor/samsung/gts4lv/proprietary/vendor/firmware/wlan/qca_cld/regdb.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/regdb.bin \
     vendor/samsung/gts4lv/proprietary/vendor/firmware/wlanmdsp.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/wlanmdsp.mbn \
+    vendor/samsung/gts4lv/proprietary/vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.dpm.api@1.0.so \
     vendor/samsung/gts4lv/proprietary/vendor/lib64/libconfigdb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libconfigdb.so \
+    vendor/samsung/gts4lv/proprietary/vendor/lib64/libdpmqmihal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdpmqmihal.so \
     vendor/samsung/gts4lv/proprietary/vendor/lib64/liblqe.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liblqe.so \
     vendor/samsung/gts4lv/proprietary/vendor/lib64/libnetmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnetmgr.so \
     vendor/samsung/gts4lv/proprietary/vendor/lib64/libnetmgr_common.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnetmgr_common.so \
@@ -86,4 +102,5 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/gts4lv/proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung.hardware.radio@2.1.so
 
 PRODUCT_PACKAGES += \
-    libril
+    libril \
+    dpmserviceapp
